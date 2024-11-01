@@ -6,7 +6,7 @@ import arabic_reshaper
 from bidi.algorithm import get_display
 from hazm import Normalizer, word_tokenize
 from loguru import logger
-from src.data import DATA_DIR
+from data import DATA_DIR
 from wordcloud import WordCloud
 
 
