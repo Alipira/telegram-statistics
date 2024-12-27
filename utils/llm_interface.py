@@ -31,7 +31,6 @@ class LLM:
             del LLM.past_key_values_cache[user_id]
 
     def generate_answer(self, prompt: str, user_id: int = None, conversation_history: list = None) -> str:
-        # Build messages for the prompt; if conversation history is included, append it
         if conversation_history:
             # Create messages with alternating user/assistant roles
             messages = []
