@@ -1,4 +1,4 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Depends, Security
 from utils.llm_interface import LLM
 
 app = FastAPI()
@@ -6,6 +6,7 @@ chatbot = LLM()
 
 @app.websocket("/ws/{user_id}")
 async def websocket_endpoint(websocket: WebSocket, user_id: str):
+    # TODO: check for api key and security
     await websocket.accept()
     conversation_history = []
 
